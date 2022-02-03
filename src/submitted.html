@@ -1,0 +1,29 @@
+{%extends "base.html" %} 
+{% block title %} S7 : bloat.link {% endblock %}
+
+{% block body %}
+<script>
+    var url_code = "{{code}}"
+</script>
+<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 bg-light border shadow-lg">
+        <div class="p-3 p-lg-5 pt-lg-3">
+            <h1 class="header-text display-4 fw-bold lh-1">Creating Your New URL</h1>
+            <br>
+            <a style="display: none" class="url-display text-nowrap display-4 py-1 rounded lh-1 text-decoration-none bg-light" href="https://bloat.link/{{code}}">bloat.link/<span></span></a>
+            <p class="lead loading-text"><span id="line-1" class="current">Loading Some Stuff...</span><br><span id="line-2">Loading Some More Stuff...</span><br><span id="line-3">Putting The Kids To Bed...</span><br><span id="line-4">Wrapping Things Up...</span></p>
+            <br>
+            <br>
+            <div class="progress">
+                <div class="pb-loading progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+            <br>
+            <div style="display: none !important" class="footer-buttons d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <button id="copy" type="button" data-toggle="popover" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"><i class="bi bi-clipboard"></i> Copy</button>
+                <button id="back" type="button" class="btn btn-outline-secondary btn-lg px-4">Make Another</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="static/loader.js"></script>
+{% endblock %}

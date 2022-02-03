@@ -1,0 +1,51 @@
+{%extends "base.html" %} 
+
+{% block body %}
+<script>
+    var bloat = "{{bloat}}"
+</script>
+<div class="outer container-lg col-xl-10 col-xxl-8 py-5">
+	<div class="row align-items-center g-lg-5 py-5">
+		<div class="col-lg-7 text-shadow text-center text-lg-start text-light">
+			<h1 class="display-3 fw-bold lh-1 mb-3">Plain <span id="secret-tooltip" title="personalities" data-original-title="dicks">urls</span> suck.</h1>
+			<p class="col-lg-10 fs-4">That's why we're helping you make them <span class="text-info">{{splash}}</span>.</p>
+		</div>
+		<div class="col-md-10 mx-auto col-lg-5">
+			<form class="p-4 p-md-5 bg-light shadow-lg rounded-3 text-shadow-lg needs-validation" action="", method="POST" novalidate>
+				<h2 class="sidekick">Let's think <code class="fs-2 ">bigger</code>.</h2>
+				<br>
+                <div class="form-floating mb-3">
+                    <div class="input-group input-group-lg">
+                        <input name="url" type="text" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" class="form-control flex-grow-3" placeholder="https://example.com" required>
+                        <div class="invalid-tooltip">
+                            Please enter a valid URL
+                        </div>
+                        <select name="operation" class="form-select select-operation flex-grow-1" id="inputGroupSelect03" aria-label="Example select with button addon" data-bv-excluded="true">
+                            <option value="1">Bloat</option>
+                            <option value="2">Trim</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-check form-check-inline form-switch px-10 mb-3">
+                    <input name="longer" class="form-check-input custom-control-input" id="cbx-modifier" type="checkbox" role="switch">
+                    <label class="form-check-label custom-control-label" for="longer">Longer <span style="display: none" id="badge-modifier" class="noselect badge badge-secondary bg-secondary">X1</span></label>
+                </div>
+                <div class="float-end">
+                    <div class="form-check form-check-inline mb-3">
+                        <input name="mode" type="radio" value="vanilla" checked>
+                        <label class="form-check-label" for="inlineCheckbox1">Normal</label>
+                    </div>
+                    <div class="form-check form-check-inline px-1 mb-3">
+                        <input name="mode" type="radio" value="caramel">
+                        <label class="form-check-label" for="longer">Fun</label>
+                    </div>
+                </div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary submit" data-toggle="modal" data-target="#exampleModalCenter">Bloat My URL</button>
+                <hr class="my-4">
+                <small class="text-muted">By clicking the button above, you agree to our <a href="">terms of use</a>.</small>
+                <input style="display: none" id="amplifier" name="amplifier" type="text" value="1"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

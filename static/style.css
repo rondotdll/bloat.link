@@ -1,0 +1,196 @@
+.studio7{
+    font-weight: 500
+}
+
+.badge{
+    transition: all 150ms linear !important;
+}
+
+.beta-banner{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0.5rem;
+    background: #fff3cd;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+  border-color: red !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 47, 69, 0.25) !important;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  border-color: red !important;
+  background-color: red !important;
+}
+
+.custom-control-input:active~.custom-control-label::before {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+  border-color: red !important;
+}
+
+.custom-control-input-green:not(:disabled):active~.custom-control-label::before {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.current, .loaded{
+    transition: all 250ms linear;
+}
+.input-group .flex-grow-1{
+    flex-grow: 1 !important;
+}
+.input-group .flex-grow-2{
+    flex-grow: 2 !important;
+}
+.input-group .flex-grow-3{
+    flex-grow: 3 !important;
+}
+.input-group .flex-grow-4{
+    flex-grow: 4 !important;
+}
+.input-group .flex-grow-5{
+    flex-grow: 5 !important;
+}
+input.form-control:valid{
+    background-image: none !important;
+}
+.form-select:valid{
+    padding-right: 3rem !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")!important;
+}
+
+.current{
+    animation: blink 1.5s linear infinite
+}
+
+.loaded{
+    opacity: 1 !important;
+}
+
+.loading-text span{
+    opacity: 0;
+}
+
+body, html{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url(https://uploads-ssl.webflow.com/5ec207a448d573153616868a/60e32bd71c699439d918ecd9_Mesh%2024.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.frosted{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.px-6{
+    padding-left: 5rem!important;
+    padding-right: 2rem !important
+}
+
+header.frosted{
+    background: rgba(255, 255, 255, 0.55) !important;
+}
+
+form.frosted{
+    background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.text-shadow{
+    text-shadow: 0px 5px 18px rgba(20, 21, 23, 0.3);
+}
+
+.text-shadow{
+    text-shadow: 0px 5px 36px rgba(20, 21, 23, 0.3);
+}
+
+.force-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.px-10{
+    padding-left: 3.5em !important;
+}
+
+.tooltip > .tooltip-inner {
+    color: #212428;
+    background-color: #F8F8FB;
+}
+
+.bs-tooltip-top .tooltip-arrow::before{
+    border-top-color: #F8F8FB !important;  
+}
+
+@media (min-width: 576px) { 
+    .outer{
+        height: 100% !important;
+    }
+    .extra-ruleset-a{
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .outer{
+        height: 100% !important;
+    }
+    .extra-ruleset-a{
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .outer{
+        height: 100% !important;
+    }
+    .extra-ruleset-a{
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .extra-ruleset-a{
+        text-align: left;
+    }
+}
+
+@media (min-width: 1400px) {
+    .extra-ruleset-a{
+        text-align: left;
+    }
+}
+
+@keyframes blink{
+    0%{
+        opacity: 1
+    }
+    50%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+    }
+}
