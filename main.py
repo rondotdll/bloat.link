@@ -13,12 +13,6 @@ db = SQLAlchemy(app)
 
 splashesLarge = ["smaller", "unpleasurable", "pleasurable", "longer", "shorter", "girthy", "wimpy", "juicy", "drier", "plump", "fatter", "thinner", "nicer", "rougher", "stronger", "finer", "coarser", "great", "horrible", "pleasant", "unpleasant", "unique"];
 
-
-# def decodecfg(x :int):
-#     mode = x >> 3 
-#     times = x & 0x7
-#     return mode, times
-
 class urls(db.Model):
     id_ = db.Column("id_", db.Integer, primary_key=True)
     origin = db.Column("origin", db.String())
@@ -29,9 +23,7 @@ class urls(db.Model):
         self.origin = origin
         self.redirect = redirect
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 @app.route('/', methods=["POST", "GET"])
 def index(bloat_mode="true"):
@@ -100,6 +92,11 @@ def not_found(e):
 @app.errorhandler(500)
 def server_error(e):
     return render_template("500.html")
-    
+
+def init_db():
+    with app.app_context():
+        db.create_all()
+
 if __name__ == "__main__":
+    init_db()
     app.run(host='0.0.0.0', port=8080, debug=True)

@@ -1,10 +1,65 @@
-.studio7{
+.brand{
     font-weight: 500
 }
 
 .badge{
     transition: all 150ms linear !important;
 }
+
+
+nav a:not(.active) {
+    transition: all 150ms ease-out;
+    transform: translate(0, 0);
+}
+
+nav a:not(.active):hover {
+    transform: translate(0, -0.125rem);
+}
+
+nav a.active {
+    font-weight: bolder;
+
+    margin-bottom: 0;
+    /*padding-bottom: 0;*/
+}
+
+nav a.active > span {
+    display: inline-block;
+    position: relative;
+
+    transform: translate(0, 0);
+    transition: all 150ms ease-out;
+}
+
+nav a.active:hover > span {
+    transform: translate(0, -0.062rem);
+}
+
+nav a.active:after {
+    content: "";
+    position: relative;
+    display: block;
+
+    width: 0.5rem;
+    height: 0.125rem;
+
+    margin: 0;
+    padding: 0;
+
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    background: white;
+    border-radius: 100rem;
+
+    transition: all 150ms ease-out
+}
+
+nav a.active:hover:after {
+    width: 1rem;
+}
+
 
 .beta-banner{
     position: absolute;
@@ -90,7 +145,15 @@ input.form-control:valid{
 body, html{
     min-width: 100vw;
     min-height: 100vh;
-    background: url(https://uploads-ssl.webflow.com/5ec207a448d573153616868a/60e32bd71c699439d918ecd9_Mesh%2024.jpg);
+    background-color:#ffa799;
+    background-image:
+        radial-gradient(at 56% 83%, hsla(322,62%,63%,1) 0px, transparent 50%),
+        radial-gradient(at 87% 26%, hsla(251,71%,66%,1) 0px, transparent 50%),
+        radial-gradient(at 7% 46%, hsla(213,85%,71%,1) 0px, transparent 50%),
+        radial-gradient(at 40% 26%, hsla(191,94%,66%,1) 0px, transparent 50%),
+        radial-gradient(at 36% 56%, hsla(78,92%,63%,1) 0px, transparent 50%),
+        radial-gradient(at 2% 22%, hsla(217,87%,79%,1) 0px, transparent 50%),
+        radial-gradient(at 39% 66%, hsla(10,86%,75%,1) 0px, transparent 50%);
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
