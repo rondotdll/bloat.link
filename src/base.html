@@ -33,7 +33,7 @@
     </head>
     <body class="m-auto d-flex flex-column align-items-stretch justify-content-center">
 <!--        <span class="beta-banner"><strong>This site is early access</strong> so some features may be missing or not function as intended.</span>-->
-        <nav class="py-2 frosted">
+        <nav class="py-2 d-flex justify-content-center position-fixed w-100 top-0">
             <div class="container d-flex flex-wrap justify-content-between align-items-center">
                 <ul class="nav">
                     <li class="nav-item"><a href="/" class="nav-link link-light px-2 active" aria-current="page"><span>Home</span></a></li>
@@ -47,10 +47,12 @@
                 </ul>
             </div>
         </nav>
-        <main class="my-auto">
-        {% block body %}
+        <main class="flex-grow-1 d-flex flex-column">
+            <section class="my-auto">
+            {% block body %}
 
-        {% endblock %}
+            {% endblock %}
+            </section>
         </main>
         <div class="container fixed-bottom px-4">
             <footer style="opacity: 0.85" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">

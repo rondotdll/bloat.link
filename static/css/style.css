@@ -1,3 +1,7 @@
+:root{
+    --nav-height: 64px;
+}
+
 .brand{
     font-weight: 500
 }
@@ -25,6 +29,10 @@
 
 form input, form select {
     --bs-body-bg: rgba(255, 255, 255, 0.9);
+}
+
+nav {
+   height: var(--nav-height);
 }
 
 nav.frosted {
@@ -173,7 +181,15 @@ input.form-control:valid{
 body, html{
     min-width: 100vw;
     min-height: 100vh;
-    background-color:#ffa799;
+    background-color: #141517;
+    overflow-x: hidden;
+}
+
+main {
+    margin: 16px;
+    border-radius: 0.25rem;
+    margin-top: var(--nav-height);
+    background-color: #ffa799;
     background-image:
         radial-gradient(at 56% 83%, hsla(322,62%,63%,1) 0px, transparent 50%),
         radial-gradient(at 87% 26%, hsla(251,71%,66%,1) 0px, transparent 50%),
@@ -186,7 +202,6 @@ body, html{
     animation: bgMove 45s ease-in-out infinite;
     background-position: bottom;
     background-attachment: fixed;
-    overflow-x: hidden;
 }
 
 @Keyframes bgMove {
