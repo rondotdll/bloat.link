@@ -6,6 +6,35 @@
     transition: all 150ms linear !important;
 }
 
+@font-face {
+    font-family: "Modak";
+    src: url("/static/fonts/Modak-Regular.ttf") format("truetype");
+}
+
+.font-modak {
+    font-family: "Modak", sans-serif;
+}
+
+.ls-normal {
+    letter-spacing: normal;
+}
+
+.ls-wide {
+    letter-spacing: 0.1em;
+}
+
+form input, form select {
+    --bs-body-bg: rgba(255, 255, 255, 0.9);
+}
+
+nav.frosted {
+    background-color: rgba(20, 21, 23, 0.90) !important;
+    backdrop-filter: blur(4px);
+}
+
+nav a {
+    font-size: 1.125rem !important;
+}
 
 nav a:not(.active) {
     transition: all 150ms ease-out;
@@ -59,7 +88,6 @@ nav a.active:after {
 nav a.active:hover:after {
     width: 1rem;
 }
-
 
 .beta-banner{
     position: absolute;
@@ -154,29 +182,39 @@ body, html{
         radial-gradient(at 36% 56%, hsla(78,92%,63%,1) 0px, transparent 50%),
         radial-gradient(at 2% 22%, hsla(217,87%,79%,1) 0px, transparent 50%),
         radial-gradient(at 39% 66%, hsla(10,86%,75%,1) 0px, transparent 50%);
-    background-size: cover;
+    background-size: 200% 200%;
+    animation: bgMove 45s ease-in-out infinite;
     background-position: bottom;
     background-attachment: fixed;
     overflow-x: hidden;
 }
 
+@Keyframes bgMove {
+    0% {
+        background-position: 50% 50%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
 .frosted{
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .px-6{
     padding-left: 5rem!important;
     padding-right: 2rem !important
-}
-
-header.frosted{
-    background: rgba(255, 255, 255, 0.55) !important;
-}
-
-form.frosted{
-    background: rgba(255, 255, 255, 0.75) !important;
 }
 
 .text-shadow{

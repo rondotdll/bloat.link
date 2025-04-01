@@ -4,13 +4,13 @@ $(document).ready(() => {
 
     if (bloat == "true"){
         $("select").val(1)
-        $("#cbx-modifier").prop("disabled", false);
+        $("#cbx-modifier").prop("disabled", false)
         $(".submit").html("Bloat My URL")
         $(".sidekick").html("Let's think <code class=\"fs-2\">bigger</code>.")
     } else{
         $("select").val(2)
         $("#cbx-modifier").prop("disabled", true).prop("checked", false);
-        $(".submit").html("Trim My URL")
+        $(".submit").html("\uFe0F Trim My URL")
         $(".sidekick").html("Let's think <code class=\"fs-4\">smaller</code>.")
     }
 
@@ -21,13 +21,19 @@ $(document).ready(() => {
     $(".select-operation").on("change", () => {
         console.log($(".select-operation option:selected").text())
         if ($(".select-operation option:selected").text() == "Bloat"){
+            $(".select-operation")
+                .removeClass("ls-normal").removeClass("fw-lighter")
+                .addClass("ls-wide").addClass("fw-bold");
             $("#cbx-modifier").prop("disabled", false);
             $(".submit").html("Bloat My URL")
             $(".sidekick").html("Let's think <code class=\"fs-2\">bigger</code>.")
         }
         else {
+            $(".select-operation")
+                .removeClass("ls-wide").removeClass("fw-bold")
+                .addClass("ls-normal").addClass("fw-lighter");
             $("#cbx-modifier").prop("disabled", true).prop("checked", false)
-            $(".submit").html("Trim My URL")
+            $(".submit").html("&#xFE0F; Trim My URL")
             $(".sidekick").html("Let's think <code class=\"fs-4\">smaller</code>.")
             $("#badge-modifier").fadeOut("fast")
             $("#badge-modifier").html("X1")

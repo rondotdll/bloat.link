@@ -1,4 +1,3 @@
-# import emoji
 import string
 import random
 import urllib.parse as urllib
