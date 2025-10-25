@@ -22,28 +22,14 @@ $(document).ready(() => {
         copyToClipboard("https://bloat.link/" + url_code)
     })
     
-    $(this).delay(500).queue(function() { 
+    $(this).delay(250).queue(function() {
         $(".pb-loading").attr("style", "width: 15%");
-        $(this).dequeue();       
-    }).delay(1250).queue(function() { 
-        $(".pb-loading").attr("style", "width: 40%");
-        $("#line-1").removeClass("current").addClass("loaded")
-        $("#line-2").addClass("current")
-        $(this).dequeue();       
-    }).delay(1500).queue(function() { 
-        $(".pb-loading").attr("style", "width: 85%");
-        $("#line-2").removeClass("current").addClass("loaded")
-        $("#line-3").addClass("current")
-        $(this).dequeue();       
-    }).delay(1000).queue(function() { 
+        $(this).dequeue();
+    }).delay(750).queue(function() {
         $(".pb-loading").attr("style", "width: 99%");
         $("#line-3").removeClass("current").addClass("loaded")
         $("#line-4").addClass("current")
-        $(this).dequeue();       
-    }).delay(750).queue(function() { 
-        $(".pb-loading").attr("style", "width: 100%");
-        $("#line-4").removeClass("current").addClass("loaded")
-        $(this).dequeue();       
+        $(this).dequeue();
     }).delay(100).queue(function() {
         $(".header-text").fadeOut()
         $(".loading-text").fadeOut()

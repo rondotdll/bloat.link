@@ -28,16 +28,16 @@
                 </div>
                 <div class="form-check form-check-inline form-switch px-10 mb-3">
                     <input name="longer" class="form-check-input custom-control-input" id="cbx-modifier" type="checkbox" role="switch">
-                    <label class="form-check-label custom-control-label" for="longer">Longer <span style="display: none" id="badge-modifier" class="noselect badge badge-secondary bg-secondary">X1</span></label>
+                    <label class="form-check-label custom-control-label">Longer <span style="display: none" id="badge-modifier" class="noselect badge badge-secondary bg-secondary">X1</span></label>
                 </div>
                 <div class="float-end">
                     <div class="form-check form-check-inline mb-3">
-                        <input name="mode" type="radio" value="vanilla" checked>
-                        <label class="form-check-label" for="inlineCheckbox1">Normal</label>
+                        <input name="mode" id="normalRadioButton" type="radio" value="vanilla" checked>
+                        <label class="form-check-label" for="normalRadioButton">Normal</label>
                     </div>
                     <div class="form-check form-check-inline px-1 mb-3">
-                        <input name="mode" type="radio" value="caramel">
-                        <label class="form-check-label" for="longer">Fun</label>
+                        <input name="mode" id="funRadioButton" type="radio" value="caramel">
+                        <label class="form-check-label" for="funRadioButton">Fun</label>
                     </div>
                 </div>
                 <button type="submit" class="w-100 btn btn-lg btn-primary submit">Bloat My URL</button>
