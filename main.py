@@ -11,10 +11,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-with app.app_context():
-    os.makedirs("instance", exist_ok=True)
-    db.create_all()
-
 splashesLarge = ["smaller", "unpleasurable", "pleasurable", "longer", "shorter", "girthy", "wimpy", "juicy", "drier", "plump", "fatter", "thinner", "nicer", "rougher", "stronger", "finer", "coarser", "great", "horrible", "pleasant", "unpleasant", "unique"];
 
 class urls(db.Model):
@@ -26,6 +22,10 @@ class urls(db.Model):
     def __init__(self, origin, redirect, user=""):
         self.origin = origin
         self.redirect = redirect
+
+with app.app_context():
+    os.makedirs("instance", exist_ok=True)
+    db.create_all()
 
 @app.route('/', methods=["POST", "GET"])
 def index(bloat_mode="true"):
