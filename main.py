@@ -11,6 +11,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
+with app.app_context():
+    os.makedirs("instance", exist_ok=True)
+    db.create_all()
+
 splashesLarge = ["smaller", "unpleasurable", "pleasurable", "longer", "shorter", "girthy", "wimpy", "juicy", "drier", "plump", "fatter", "thinner", "nicer", "rougher", "stronger", "finer", "coarser", "great", "horrible", "pleasant", "unpleasant", "unique"];
 
 class urls(db.Model):
@@ -22,8 +26,6 @@ class urls(db.Model):
     def __init__(self, origin, redirect, user=""):
         self.origin = origin
         self.redirect = redirect
-
-
 
 @app.route('/', methods=["POST", "GET"])
 def index(bloat_mode="true"):
@@ -50,16 +52,6 @@ def index(bloat_mode="true"):
         return render_template("submitted.html", code=origin_url), 201
     else:
         return render_template("landing.html", splash=random.choice(splashesLarge), bloat=bloat_mode), 201
-
-# @app.route("/bloat", methods=["GET"])
-# @app.route("/lengthen", methods=["GET"])
-# def rerouteb():
-#     index(bloat_mode="true")
-
-# @app.route("/trim")
-# @app.route("/shorten", methods=["GET"])
-# def reroutet():
-#     index(bloat_mode="false")
 
 @app.route("/signup")
 @app.route("/login")
@@ -90,10 +82,5 @@ def not_found(e):
 def server_error(e):
     return render_template("500.html")
 
-def init_db():
-    with app.app_context():
-        db.create_all()
-
 if __name__ == "__main__":
-    init_db()
     app.run(host='0.0.0.0', port=8000, debug=False)
