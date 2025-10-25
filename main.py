@@ -46,9 +46,6 @@ def index(bloat_mode="true"):
         new_url = urls(origin_url, url)
         db.session.add(new_url)
         db.session.commit()
-        if request.headers.getlist("User-Agent")[0] == "S7EXP_APP" and request.headers.getlist("S7AUTH")[0] == os.environ["S7AUTH"]:
-            print(origin_url)
-            return origin_url
 
         return render_template("submitted.html", code=origin_url), 201
     else:
@@ -99,4 +96,4 @@ def init_db():
 
 if __name__ == "__main__":
     init_db()
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=False)
