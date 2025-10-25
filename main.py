@@ -6,10 +6,7 @@ from linkgen import gen_long_url, gen_short_url
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder="./src/")
-db_path = os.path.expanduser("~/.bloatlink/redirects.db")
-os.makedirs(os.path.dirname(db_path), exist_ok=True)
-app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_path}"
-
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///instance/redirects.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
